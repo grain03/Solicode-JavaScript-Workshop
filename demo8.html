@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./demo8.css">
+    <script src="./demo8.js"></script>
+    <script src="https://kit.fontawesome.com/6996d94af3.js" crossorigin="anonymous"></script>
+    <title>Losange en étoiles !</title>
+</head>
+<body>
+
+
+
+    <header>
+  
+  
+        <div class="logo"><img src="https://trello.com/1/cards/63692025075dc5045c4a7adf/attachments/636a19d3915e8c05d0ead23c/download/logo.png" alt="logo" ></div>
+        
+        <nav role="navigation">
+            <div id="clickNav">
+                <input type="checkbox" />
+                
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul class="nav-data" role="list">
+                    <li><a href="./demo1.html">Variables</a></li>
+                    <li><a href="./demo2.html">Conditions</a></li>
+              
+                    <li class="separator"></li>
+        
+                    <li><a href="./demo9.html">Boucle For</a></li>
+                    <li><a href="./demo7.html">Boucle While</a></li>
+                    <li><a href="./demo8.html">Boucles Imbriquées</a></li>
+              
+                    <li class="separator"></li>
+              
+                    <li><a href="./demo5.html">Chaine: Recherche et suppression</a></li>
+                    <li><a href="./demo4.html">Compter le nombre de voyelles dans une chaine</a></li>
+              
+                    <li class="separator"></li>
+        
+                    <li><a href="./demo10.html">Tri d'un tableau</a></li>
+                    <li><a href="./demo6.html">Recherche dans un tableau</a></li>
+                    <li class="separator"></li>
+              
+                    <li><p><strong> © REDA & JALAL</strong></p></li>
+              
+                </ul>
+            </div>
+        </nav>
+          
+          </header> 
+
+    <div class="content">
+
+
+        <section id="variables">
+            <h2>Losange en étoiles !</h2>
+
+            <div class="demoBox">
+                <h3>Enoncé</h3>
+                <p>Ce programme a pour objectif de dessiner un losange en étoiles dont
+                     la longueur des diagonales est un nombre impair saisi par l’utilsateur.
+                    Dans le cas où l’utilisateur entre un nombre pair, il faut afficher une erreur. 
+                </p>
+            </div>
+            <div class="demoBox">
+                <h3>Démo</h3>
+                <div class="container">
+                    <form onsubmit="return false">
+                            <div>
+                                <label for="number">Saisir la longueur des diagonales</label>
+                                <input type="text" name="number" id="number">
+                            </div>
+                            <button id="btn" onclick="fun()">Dessiner</button>
+                    </form>
+
+                    <div>
+                        <p id="message">
+                            starts
+                        </p>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="demoBox">
+                <h3>Code source</h3>
+                <p>
+                   
+                </p>
+            </div>
+        </section>
+
+    </div>
+    
+
+    <script>
+
+        
+
+            function fun(){
+
+               
+var num = document.getElementById("number").value;
+var output = document.getElementById("message");
+var i,j; 
+
+  output.innerHTML = "";
+  for( i = 1; i <= num; i++){
+    for ( j = 0; j < i; j++){
+      output.innerHTML += "*";
+    }
+    output.innerHTML +="<br>";
+  }
+
+}
+
+                
+            
+        
+    </script>
+</body>
+</html>

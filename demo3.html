@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./demo3.css">
+    <script src="./demo3.js"></script>
+    <script src="https://kit.fontawesome.com/6996d94af3.js" crossorigin="anonymous"></script>
+    <title>JS Demo</title>
+</head>
+<body>
+
+    <header>
+  
+  
+        <div class="logo"><img src="https://trello.com/1/cards/63692025075dc5045c4a7adf/attachments/636a19d3915e8c05d0ead23c/download/logo.png" alt="logo" ></div>
+        
+        <nav role="navigation">
+            <div id="clickNav">
+                <input type="checkbox" />
+                
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul class="nav-data" role="list">
+                    <li><a href="./demo1.html">Variables</a></li>
+                    <li><a href="./demo2.html">Conditions</a></li>
+              
+                    <li class="separator"></li>
+        
+                    <li><a href="./demo9.html">Boucle For</a></li>
+                    <li><a href="./demo7.html">Boucle While</a></li>
+                    <li><a href="./demo8.html">Boucles Imbriquées</a></li>
+              
+                    <li class="separator"></li>
+              
+                    <li><a href="./demo5.html">Chaine: Recherche et suppression</a></li>
+                    <li><a href="./demo4.html">Compter le nombre de voyelles dans une chaine</a></li>
+              
+                    <li class="separator"></li>
+        
+                    <li><a href="./demo10.html">Tri d'un tableau</a></li>
+                    <li><a href="./demo6.html">Recherche dans un tableau</a></li>
+                    <li class="separator"></li>
+              
+                    <li><p><strong> © REDA & JALAL</strong></p></li>
+              
+                </ul>
+            </div>
+        </nav>
+          
+          </header>
+
+    <div class="content">
+
+
+        <section id="variables">
+            <h2>Valider une date</h2>
+
+            <div class="demoBox">
+                <h3>Enoncé</h3>
+                <p>Créez 4 fonctions Javascript (Somme, Soustraction, Division, Multiplication). L’utilisateur saisie deux nombres dans deux inputs, choisi ensuite une opération arithmétique. Le résultat est donné par l’une des 4 fonctions Javascript. 
+
+                </p>
+            </div>
+            <div class="demoBox">
+                <h3>Démo</h3>
+                <div class="permutation">
+                    <form onsubmit="return false">
+                        <div>
+                            
+                            <input type="number" name="number" id="number1">
+                        </div>
+                        <div>
+                            <input type="number" name="number" id="number2">
+                        </div>
+                    <div class="button">
+                        <button ID="bg1" onclick="btn1()">+</button><br>
+                        <button ID="bg2" onclick="btn2()">-</button><br>
+                        <button ID="bg3" onclick="btn3()">x</button><br>
+                        <button ID="bg4" onclick="btn4()">/</button><br>
+                    </div>
+
+                    <P id="result"></P>
+
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="demoBox">
+                <h3>Code source</h3>
+                <p id="result1">
+                    <span id="color1">
+                        function</span> btn1() {<br>
+                            let num1 = parseInt(document.<span id="color2">getElementById</span>('number1').value);<br>
+                            let num2 = parseInt(document.<span id="color2">getElementById</span>('number2').value);<br>
+                            document.<span id="color2">getElementById</span>('result').innerHTML= num1 + num2;<br>
+                            <br>
+                        document.<span id="color2">getElementById</span>("result1").style.display = "block";<br>
+                        bg1.classList.<span id="color2">add</span>("active"); <br>
+                        bg2.classList.<span id="color2">remove</span>("active");<br>
+                        bg3.classList.<span id="color2">remove</span>("active");<br>
+                        bg4.classList.<span id="color2">remove</span>("active");<br>
+                        }<br>
+                        <br>
+                        
+                        <span id="color1">function</span> btn2() {<br>
+                            let num1 = parseInt(<span id="color2">document</span>.getElementById('number1').value);<br>
+                            let num2 = parseInt(<span id="color2">document</span>.getElementById('number2').value);<br>
+                            document.<span id="color2">getElementById</span>('result').innerHTML= num1 - num2;<br>
+                        
+                        document.getElementById("result1").style.display = "block";<br>
+                        bg2.classList.<span id="color2">add</span>("active"); <br>
+                        bg1.classList.<span id="color2">remove</span>("active");<br>
+                        bg3.classList.<span id="color2">remove</span>("active");<br>
+                        bg4.classList.<span id="color2">remove</span>("active");<br>
+                        <br>
+                        
+                        }<br>
+                        
+                        
+                        <span id="color1">function</span> btn3() {<br>
+                            let num1 = parseInt(document.<span id="color2">getElementById</span>('number1').value);<br>
+                            let num2 = parseInt(document.<span id="color2">getElementById</span>('number2').value);<br>
+                            document.<span id="color2">getElementById</span>('result').innerHTML= num1 * num2;<br>
+                            <br>
+                        document.<span id="color2">getElementById</span>("result1").style.display = "block";<br>
+                        bg2.classList.<span id="color2">remove</span>("active");<br>
+                        bg3.classList.<span id="color2">add</span>("active"); <br>
+                        bg2.classList.<span id="color2">remove(</span>"active");<br>
+                        bg1.classList.<span id="color2">remove</span>("active");<br>
+                        bg4.classList.<span id="color2">remove</span>("active");<br>
+                        
+                        }<br>
+                        
+                        <br>
+                        
+                        
+                        
+                        <span id="color1">function</span> <span id="color2">btn4()</span> {<br>
+                            let num1 = parseInt(document.<span id="color2">getElementById</span>('number1').value);<br>
+                            let num2 = parseInt(document.<span id="color2">getElementById</span>('number2').value);<br>
+                            document.<span id="color2">getElementById</span>('result').innerHTML= num1 / num2;<br>
+                        
+                        document.<span id="color2">getElementById</span>("result1").style.display = "block";<br>
+                        bg4.classList.<span id="color2">add</span>("active"); <br>
+                        bg3.classList.<span id="color2">remove</span>("active");<br>
+                        bg2.classList.<span id="color2">remove</span>("active");<br>
+                        bg3.classList.<span id="color2">remove</span>("active");<br>
+                        bg1.classList.<span id="color2">remove</span>("active");<br>
+                        
+                        
+                        }<br>
+                        </p>
+            </div>
+        </section>
+
+    </div>
+    
+
+
+</body>
+</html>

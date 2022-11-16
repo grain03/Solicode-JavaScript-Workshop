@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* { margin: 0; padding: 0;}
+
+body { 
+  margin: 0;
+  padding: 0;
+  background: #232323;
+  color: #cdcdcd;
+  font-family: 'Roboto', sans-serif;
+}
+a { 
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+a:hover, a:active, a.active { 
+  color: #00b4d8;
+}
+nav { 
+  float: left;
+  width: 0;
+  height: 0;
+}
+.nav-data { 
+  position: absolute;
+  width: 240px;
+  height: 100vh;
+  margin: -100px 0 0 -50px;
+  padding: 125px 10px 40px;
+  background: #ededed;
+  list-style-type: none;
+}
+.nav-data li { 
+  padding: 10px 25px;
+  font-size: 16px;
+}
+.nav-data li a { 
+  padding: 0;
+} /* padding: 25px 50px */
+
+.nav-data .separator { 
+  padding: 0;
+  border-bottom: 3px solid #e6e7ea;
+  cursor: default;
+  margin: 10px 0;
+}
+
+header
+{   
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background: #ededed;
+}
+header .logo img
+{   
+    width: 150px;
+    right: 50px;
+    top: 0;
+    margin: 5px;
+    float: right;
+    position: relative;
+}
+#clickNav { 
+  display: block;
+  position: relative;
+  top: 28px;
+  left: 50px;
+  z-index: 1;
+}
+#clickNav input { 
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 9999;
+  -webkit-touch-callout: none;
+}
+#clickNav input:checked ~ ul {
+  -webkit-transform: none; transform: none;
+}
+
+#clickNav span { 
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: black;
+  border-radius: 3px;
+  z-index: 1;
+}
+#clickNav span {
+-webkit-transform-origin: 4px 0px;
+transform-origin: 4px 0px;
+transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), 
+opacity 0.55s ease,
+-webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+opacity 0.55s ease;
+transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+opacity 0.55s ease,
+-webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#clickNav span:first-child { 
+	-webkit-transform-origin: 0% 0%; 
+	transform-origin: 0% 0%;
+}
+#clickNav span:nth-last-child(2) { 
+	-webkit-transform-origin: 0% 100%; 
+	transform-origin: 0% 100%;
+}
+
+#clickNav input:checked ~ span { 
+	opacity: 1; 
+	-webkit-transform: rotate(45deg) translate(-2px, -1px); 
+	transform: rotate(45deg) translate(-2px, -1px); 
+	background: #232323;
+}
+
+#clickNav input:checked ~ span:nth-last-child(3) {
+	opacity: 0;
+	-webkit-transform: rotate(0deg) scale(0.2, 0.2);
+	transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#clickNav input:checked ~ span:nth-last-child(2) {
+	-webkit-transform: rotate(-45deg) translate(0, -1px);
+	transform: rotate(-45deg) translate(0, -1px);
+}
+
+.nav-data {
+	-webkit-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+	-webkit-transform: translate(-100%, 0);
+	transform: translate(-100%, 0);
+	transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+/* styling the body content */
+
+.content 
+{
+    width: 90%;
+    margin: auto;
+    
+}
+
+section 
+{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-direction: flex-start;
+    align-items: flex-start;
+    padding-top: 20vh;
+}
+
+.demoBox 
+{
+    width: 100%;
+}
+.demoBox h3
+{   
+    background: #00b4d8;
+    color: black;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-bottom: 3px solid black;
+}
+.demoBox p
+{
+    background: #C5C6C6;
+    color: #0c0f0a;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+
+.permutation form
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    padding: 15px 20px;
+    background: #C5C6C6;
+}
+.permutation form label
+{
+    color: black;
+    font-size: 18px;
+}
+.permutation form input
+{
+    padding: 10px 10px;
+    border: 1px solid #392E2C;
+    border-radius: 5px;
+    outline: none;
+}
+.permutation form button
+{
+    background: none;
+    border: none ;
+}
+.permutation form img
+{
+    margin-top: 20px;
+}

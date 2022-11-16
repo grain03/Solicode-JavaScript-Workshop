@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./demo7.css">
+    <script src="./demo7.js"></script>
+    <script src="https://kit.fontawesome.com/6996d94af3.js" crossorigin="anonymous"></script>
+    <title>Deviner un numero</title>
+</head>
+<body>
+
+
+
+    <header>
+  
+  
+        <div class="logo"><img src="https://trello.com/1/cards/63692025075dc5045c4a7adf/attachments/636a19d3915e8c05d0ead23c/download/logo.png" alt="logo" ></div>
+        
+        <nav role="navigation">
+            <div id="clickNav">
+                <input type="checkbox" />
+                
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <ul class="nav-data" role="list">
+                    <li><a href="./demo1.html">Variables</a></li>
+                    <li><a href="./demo2.html">Conditions</a></li>
+              
+                    <li class="separator"></li>
+        
+                    <li><a href="./demo9.html">Boucle For</a></li>
+                    <li><a href="./demo7.html">Boucle While</a></li>
+                    <li><a href="./demo8.html">Boucles Imbriquées</a></li>
+              
+                    <li class="separator"></li>
+              
+                    <li><a href="./demo5.html">Chaine: Recherche et suppression</a></li>
+                    <li><a href="./demo4.html">Compter le nombre de voyelles dans une chaine</a></li>
+              
+                    <li class="separator"></li>
+        
+                    <li><a href="./demo10.html">Tri d'un tableau</a></li>
+                    <li><a href="./demo6.html">Recherche dans un tableau</a></li>
+                    <li class="separator"></li>
+              
+                    <li><p><strong> © REDA & JALAL</strong></p></li>
+              
+                </ul>
+            </div>
+        </nav>
+          
+          </header>
+
+
+
+
+
+
+
+
+
+
+    <div class="content">
+
+
+        <section id="variables">
+            <h2>Devine le nombre !</h2>
+
+            <div class="demoBox">
+                <h3>Enoncé</h3>
+                <p>L’utilisateur doit deviner un nombre entre 1 et 50 que le programme a choisi aléatoirement en 10 tentatives. Quand l’utilisateur entre une valeur, on lui affiche le nombre de tentatives restantes, ainsi qu’un message indiquant si sa réponse est correcte ou pas.
+                </p>
+            </div>
+            <div class="demoBox">
+                <h3>Démo</h3>
+                
+                <div id="container">
+                    <h4>Deviner un nombre entre 1 et 50 !</h4>
+                    <p id="outputText">Entrer un numero !</p>
+                    <p id="guesses">Nombre de Tentatives : 0/10</p>
+                    <form onsubmit="return false">
+                        <input id="userInput">
+                        <button id="enterButton">Entrer</button>
+                        <button id="againButton">Jouer à Nouveau</button>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="demoBox">
+                <h3>JS Code source</h3>
+                <p id="result2">
+                    
+                      
+                </p>
+            </div>
+        </section>
+
+    </div>
+    
+
+    <script>
+        var enterButton = document.getElementById('enterButton');
+        var againButton = document.getElementById('againButton');
+        var output = document.getElementById('outputText');
+        var guessesOutput = document.getElementById('guesses');
+        var guesses = 0;
+
+        var randomNumber = Math.ceil(Math.random()*50);
+        
+        function checkNumber(){
+          var input = document.getElementById('userInput').value;
+          if(input == randomNumber){
+            output.innerHTML="Parfait !! "+ ", "+ " le numéro est bien : "+ randomNumber;
+            output.style.color="#2A9D8F";
+          }
+          else if (guesses >= 10 ) {
+            output.innerHTML="Vous avez Perdué, Recommencer à nouveau";
+            output.style.fontSize="28px"
+            
+            }
+            else if(input>randomNumber && input<=50){
+              output.innerHTML="Le numéro entré est Plus Grand !";
+              guesses++;
+              guessesOutput.innerHTML= "Nombre de Tentatives : " + guesses + " / 10 ";
+              output.style.color="#CA3C66";
+            }
+            else if(input<randomNumber && input>=1){
+              output.innerHTML="Le numéro entré est Plus petite !";
+              guesses++;
+              guessesOutput.innerHTML= "Nombre de Tentatives : " + guesses + " / 10 ";
+              output.style.color="#CA3C66";
+            }
+            else if(input<1){
+              output.innerHTML=" Recommencer ! Le numero doit etre entre 1 et 50.";
+              guesses++;
+              guessesOutput.innerHTML= "Nombre de Tentatives : " + guesses + " / 10 ";
+              output.style.color="#CA3C66";
+            }
+            else if(isNaN(input)){
+              output.innerHTML="Ce n'est un numéro !";
+              guesses++;
+              guessesOutput.innerHTML= "Nombre de Tentatives : " + guesses + " / 10 ";
+              output.style.color="#CA3C66";
+            }
+            else{
+              output.innerHTML=" Recommencer ! Le numero doit etre entre 1 et 50.";
+              guesses++;
+              guessesOutput.innerHTML= "Nombre de Tentatives : " + guesses + " / 10 ";
+              output.style.color="#CA3C66";
+            }
+    }
+        enterButton.addEventListener('click', checkNumber);
+        againButton.addEventListener('click', function(){
+          location.reload();
+        })
+      </script>
+</body>
+</html>
